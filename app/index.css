@@ -269,3 +269,11 @@ li {
   background: #292929;
   color: #2a2a2a;
 }
+
+.space-between {
+  justify-content: space-between;
+}
+
+.nav li {
+  margin-right: 10px;
+}
