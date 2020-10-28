@@ -5,6 +5,8 @@ import { FaCompass, FaBriefcase, FaUsers, FaUserFriends, FaCode, FaUser } from '
 import Card from './Card'
 import Loading from './Loading'
 import Tooltip from './Tooltip'
+import queryString from 'query-string'
+import { Link } from 'react-router-dom'
 
 
 
@@ -60,7 +62,10 @@ export default class Results extends React.Component {
 
 
     componentDidMount() {
-        const { playerOne, playerTwo } = this.props
+        debugger
+
+        const { playerOne, playerTwo } = queryString.parse(this.props.location.search)
+
         battle([ playerOne, playerTwo])
             .then((players) => {
                 this.setState({
@@ -119,17 +124,12 @@ export default class Results extends React.Component {
                         
                     
                 </div>
-                <button 
-                onClick={this.props.onReset}
-                className="btn dark-btn btn-space">Reset</button>
+                <Link
+                    to='/battle'
+                    className="btn dark-btn btn-space">
+                    Reset
+                </Link>
             </React.Fragment>
         )
     }
-}
-
-
-Results.propTypes = {
-    playerOne: PropTypes.string.isRequired,
-    playerTwo: PropTypes.string.isRequired,
-    onReset: PropTypes.func.isRequired
 }
