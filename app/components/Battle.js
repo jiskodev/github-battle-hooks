@@ -16,7 +16,7 @@ function Instructions() {
                     <ol className='container-sm grid center-text battle-instructions'>
                         <li>
                             <h3 className='header-sm'>Enter two Github Users</h3>
-                            <FaUserFriends className={`bg-${theme}`} color='rgb(255, 191, 116' size={140} />
+                            <FaUserFriends className={`bg-${theme}`} color='rgb(255, 191, 116)' size={140} />
                         </li>
                         <li>
                             <h3 className='header-sm'>Battle</h3>
